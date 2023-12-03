@@ -1,33 +1,33 @@
 
-let nombre;
-let apellido;
-let localidad;
-let meses;
+function cajaNavidad() {
 
-function viajar(){
+    while (true)  {
+    let llenarCaja = confirm('Desea ingresar productos la caja navideña');
+    llenarCaja = prompt('Que producto desea agregar a la caja de navidad:\n Pan dulce \n Sidra \n Champagne \n Garrapiñada \n Mantecol \n Turrón\n Budin').toLowerCase();
 
-    let nombre=prompt(`Ingrese su nombre:`);
-       let firstName = nombre;
-    let apellido=prompt(`ingrese su apellido:`);
-
-    let pastName= apellido;
    
-    localidad=prompt(`ingresa la ciudad donde desea viajar, Córdoba, Mendoza, Jujuy o Ushuaia`).toLowerCase(); 
-       let ciudad = localidad;
-
-    meses=prompt(`Ingresa la fecha en la que deseas viajar,`).toLowerCase();
-
-    let fecha = meses;
-
-    if (localidad === "cordoba" && fecha || localidad === "jujuy" && fecha || localidad === "mendoza" && fecha || localidad === "ushuaia" && fecha) {
-        console.log(`${firstName} ${pastName} Se acaba de reservar viaje a la ciudad de ${localidad} para ${meses}`)
+  
+    if (llenarCaja==="pan dulce" || llenarCaja==="sidra" || llenarCaja==="champagne" || llenarCaja==="garrapiñada" || llenarCaja==="mantecol" || llenarCaja==="turron" || llenarCaja==="turrón" || llenarCaja==="budin" || llenarCaja==="budín"){ 
             
+         alert(`${llenarCaja} se agredo a la caja`);
+         console.log(llenarCaja);
+
     }else{
-        alert(`No poseemos reservas a esa región`)
+         alert('Producto no esta en stock');
+         break;
     }
+         llenarCaja++
+    }
+    } 
+
+    cajaNavidad();
     
-}
-viajar();
+  
+
+   
+
+
+ 
 
 
 
