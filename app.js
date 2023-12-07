@@ -1,30 +1,84 @@
 
-function cajaNavidad() {
+// varibles
+let usuario 
+let resultado
+let multiplicar
+let resultadoMulti
+const persona = []
+const numeros = []
+const error = []
 
-    while (true)  {
-    let llenarCaja = confirm('Desea ingresar productos la caja navideña');
-    llenarCaja = prompt('Que producto desea agregar a la caja de navidad:\n Pan dulce \n Sidra \n Champagne \n Garrapiñada \n Mantecol \n Turrón\n Budin').toLowerCase();
+// Funcion solicitar nombre en caso de ser un numero arroja error
+usuario = () =>{
 
-   
-  
-    if (llenarCaja==="pan dulce" || llenarCaja==="sidra" || llenarCaja==="champagne" || llenarCaja==="garrapiñada" || llenarCaja==="mantecol" || llenarCaja==="turron" || llenarCaja==="turrón" || llenarCaja==="budin" || llenarCaja==="budín"){ 
+    usuario = prompt("Ingresa tú nombre")
+        while (!isNaN(usuario)){
+            alert("Dato no valido")
+            error.push(usuario)     
             
-         alert(`${llenarCaja} se agredo a la caja`);
-         console.log(llenarCaja);
-
-    }else{
-         alert('Producto no esta en stock');
-         break;
+        usuario = prompt("Ingresa tú nombre")   
     }
-         llenarCaja++
-    }
-    } 
-
-    cajaNavidad();
-    
-  
-
+    persona.push(usuario) 
    
+    }
+
+    //funcion sumar
+
+    const sumar = () => { 
+
+    let num1=parseInt(prompt('Ingrese un numero a sumar'));
+    numeros.push(num1);
+    let num2=parseInt(prompt('Ingrese otro numero a sumar'));
+    numeros.push(num2);
+    let resultado = num1 + num2;
+    numeros.push(resultado);
+
+    alert(`El resultado de la suma es ${resultado}`);
+
+    // condicional par impar sobre resultado de la suma
+
+      if (resultado % 2) {
+
+        alert('El resultado de la suma es un número impar')
+    } else {
+
+        alert('El resultado de la suma es un número par')   
+     };
+
+  // funcion multiplicar sobre el resultado de la suma   
+
+multiplicar = () => {
+
+    let multi=parseInt(prompt("Ingrese un numero a multiplicar por el resultado"))
+    let resultadoMulti = resultado * multi;
+    numeros.push(resultadoMulti)
+
+    alert(`Resultado de la multiplicación es ${resultadoMulti}`);
+}
+    // return de la funcion sumar
+   
+    return "Primer entrega del curso JavaScript"
+}
+
+// llamado a las funciones
+usuario()
+const saludo = sumar();
+multiplicar();
+console.log(`Los números utilizados son ${numeros.join("-")}`)
+console.log(`Tu nombre es ${persona}`)
+alert(`Los datos erroneos fueron ${error.join("-")}`)
+console.log(saludo);
+
+
+
+
+
+
+
+
+
+
+
 
 
  
