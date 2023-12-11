@@ -1,73 +1,94 @@
 
-// varibles
+// varibles y arrayas
 let usuario 
 let resultado
 let multiplicar
 let resultadoMulti
+let resultadoError 
 const persona = []
 const numeros = []
 const error = []
 
 // Funcion solicitar nombre en caso de ser un numero arroja error
+
 usuario = () =>{
 
-    usuario = prompt("Ingresa tú nombre")
+    usuario = prompt("Ingresa tú nombre, no adminte números")
         while (!isNaN(usuario)){
-            alert("Dato no valido")
+            alert("No ingresaste u dato valido")
+
             error.push(usuario)     
             
         usuario = prompt("Ingresa tú nombre")   
     }
-    persona.push(usuario) 
-   
-    }
 
-    //funcion sumar
+    persona.push(usuario)   
 
-    const sumar = () => { 
+    resultadoError = () => {
+        if (error.length > 0) {
+            alert(`Los datos erroneos al querer ingresar Nombre fueron: ${error.join("-")}`)
+        }else{
+            alert(`Bienvenido ${usuario}`) 
+        }     
+    } 
+}    
 
-    let num1=parseInt(prompt('Ingrese un numero a sumar'));
+
+//funcion sumar
+
+const sumar = () => {   
+    
+    let num1=parseInt(prompt('Ingresa un numero a sumar'));
     numeros.push(num1);
-    let num2=parseInt(prompt('Ingrese otro numero a sumar'));
+    let num2=parseInt(prompt('Ingresa otro numero a sumar'));
     numeros.push(num2);
-    let resultado = num1 + num2;
+    resultado = num1 + num2;
     numeros.push(resultado);
 
-    alert(`El resultado de la suma es ${resultado}`);
 
+    
+    alert(`El resultado de la suma es ${resultado}`);
+    
+   
     // condicional par impar sobre resultado de la suma
 
-      if (resultado % 2) {
-
+    if (resultado % 2) {
+        
         alert('El resultado de la suma es un número impar')
     } else {
-
         alert('El resultado de la suma es un número par')   
-     };
-
-  // funcion multiplicar sobre el resultado de la suma   
-
-multiplicar = () => {
-
-    let multi=parseInt(prompt("Ingrese un numero a multiplicar por el resultado"))
-    let resultadoMulti = resultado * multi;
-    numeros.push(resultadoMulti)
-
-    alert(`Resultado de la multiplicación es ${resultadoMulti}`);
-}
-    // return de la funcion sumar
+    }
+    
+    // funcion multiplicar sobre el resultado de la suma   
+    
+    
+    multiplicar = () => {
+        
+        let multi=parseInt(prompt("Ingrese un numero a multiplicar por el resultado de la suma"))
+        resultadoMulti = resultado * multi;
+        numeros.push(resultadoMulti)
+        
+        alert(`Resultado de la multiplicación es ${resultadoMulti}`);
+        
+    }       
    
-    return "Primer entrega del curso JavaScript"
-}
+    
+} 
 
 // llamado a las funciones
-usuario()
-const saludo = sumar();
-multiplicar();
-console.log(`Los números utilizados son ${numeros.join("-")}`)
-console.log(`Tu nombre es ${persona}`)
-alert(`Los datos erroneos fueron ${error.join("-")}`)
-console.log(saludo);
+
+const iniciar = () =>{
+    usuario();
+    resultadoError();
+    sumar();
+    multiplicar();
+    console.log(`Los números utilizados para los ejercicios fueron: ${numeros.join("-")}`)
+    console.log(`Tu nombre es: ${persona}`)
+    alert( "Primer entrega del curso ! JavaScript !")
+    
+}
+
+iniciar();
 
 
 
@@ -75,13 +96,6 @@ console.log(saludo);
 
 
 
-
-
-
-
-
-
- 
 
 
 
