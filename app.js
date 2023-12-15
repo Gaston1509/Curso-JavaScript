@@ -88,7 +88,10 @@ const iniciar = () =>{
     
 }
 
-iniciar();
+// iniciar();
+
+
+
 
 
 

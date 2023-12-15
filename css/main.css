@@ -1,0 +1,20 @@
+body{
+    background-color: rgb(57, 51, 62);
+    margin: 0;
+    padding: 0;
+}
+.jsh1{
+    margin-top: 4rem;
+    text-align: center;
+    font-size: 5rem;
+    color: green;
+    letter-spacing: 3px;
+}
+
+h2{
+    text-align: center;
+    font-size: 3rem;
+    color: rgb(217, 182, 182);
+    letter-spacing: 3px;
+
+}
